@@ -36,4 +36,15 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+extern stack_t *head;
+
+void free_list_stack(void);
+stack_t *create_node(int n);
+void err(int error_code, ...);
+void open_file(char *file_name);
+void read_file(FILE *fd);
+int parse_line(char *buffer, int line_number, int format);
+void find_func(char *opcode, char *value, int ln, int format);
+void call_fun(op_func func, char *op, char *val, int ln, int format);
 #endif

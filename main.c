@@ -50,4 +50,3 @@ void free_list_stack(void)
 		free(tmp);
 	}
 }
-
